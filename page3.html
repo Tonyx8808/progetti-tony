@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One Piece - Ciurma Mugiwara</title>
+  <link href="./style.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+   <style>
+    .one-piece-text {
+  font-family: "Pirata One", system-ui, sans-serif;
+  color: #FFD54A; /* Colore pieno chiaro */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.9); /* Alto contrasto sullo sfondo scuro */
+  line-height: 1.7; /* Migliore leggibilità */
+  letter-spacing: 0.03em;
+  -webkit-text-stroke: 0; /* Rimuove il contorno che interferisce */
+}
+     /* Scrollbar personalizzata (solo WebKit: Chrome, Edge, Safari) */
+    .scroll-style::-webkit-scrollbar {
+      width: 8px;
+    }
+    .scroll-style::-webkit-scrollbar-track {
+      background: black;
+      border-radius: 8px;
+    }
+    .scroll-style::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #FFD54A, #FF7043);
+      border-radius: 8px;
+    }
+
+    
+  </style>
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen">
+  <!-- Sfondo -->
+  <div class="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('./onepeace.jpg');"></div>
+  <div class="fixed inset-0 z-10 bg-black/60"></div>
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-black/80 border-b-4 border-yellow-400 shadow-lg">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <!-- Mobile menu button -->
+      <div class="flex sm:hidden">
+        <button id="mobile-menu-btn"
+          class="inline-flex items-center justify-center rounded-md p-2 text-yellow-300 hover:text-white hover:bg-black/30 transition">
+          🧢
+        </button>
+      </div>
+
+      <!-- Logo -->
+      <div class="flex-1 flex items-center justify-center sm:justify-start">
+        
+        <span class="text-2xl font-extrabold text-yellow-300 drop-shadow-lg font-one">MUGIWARA</span>
+        <!-- Desktop menu -->
+        <div class="hidden sm:flex sm:ml-6 space-x-4">
+          <a href="./progettoDOM.html" class="px-3 py-2 text-sm font-semibold text-white hover:bg-red-600 hover:text-yellow-200 rounded-md">Home</a>
+          <a href="./page2.html" class="px-3 py-2 text-sm font-semibold text-white hover:bg-red-600 hover:text-yellow-200 rounded-md">Crew</a>
+          <a href="./page3.html" class="px-3 py-2 text-sm font-semibold text-white hover:bg-red-600 hover:text-yellow-200 rounded-md">Story</a>
+          <a href="./page4.html" class="px-3 py-2 text-sm font-semibold text-white hover:bg-red-600 hover:text-yellow-200 rounded-md">Grand Line</a>
+        </div>
+      </div>
+
+<div class="relative ml-3">
+  <button id="profile-btn" class="relative flex rounded-full ring-2 ring-yellow-400 focus:outline-none">
+    <img src="./lu.png" alt="Luffy" class="w-12 h-12 rounded-full border-2 border-yellow-400">
+  </button>
+
+  <!-- Menu a tendina -->
+  <div id="user-menu" class="hidden absolute right-0 mt-2 w-48 bg-yellow-400 rounded-md shadow-lg py-1 ring-1 ring-black/10">
+    <a href="#" class="block px-4 py-2 text-gray-800 font-semibold hover:bg-red-500 hover:text-white">Profilo</a>
+   
+    <a href="#" class="block px-4 py-2 text-gray-800 font-semibold hover:bg-red-500 hover:text-white">Logout</a>
+  </div>
+</div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden sm:hidden mt-2 space-y-1 bg-black/60 rounded-b-lg px-2 py-2">
+      <a href="./progettoDOM.html" class="block px-3 py-2 text-white font-semibold bg-red-600 rounded-md">Home</a>
+      <a href="./page2.html" class="block px-3 py-2 text-white font-semibold hover:bg-red-600 rounded-md">Crew</a>
+      <a href="./page3.html" class="block px-3 py-2 text-white font-semibold hover:bg-red-600 rounded-md">Story</a>
+      <a href="./page4.html" class="block px-3 py-2 text-white font-semibold hover:bg-red-600 rounded-md">Grand Line</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Audio nascosto -->
+<audio id="bg-music" loop>
+  <source src="./videoplayback.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Pulsante circolare sotto la navbar -->
+<div class="relative z-20 flex justify-left mt-2">
+  <button id="music-btn" class="onepiece-button fixed">
+    <img id="buttonIcon" src="./mugiwara.png" alt="Icona Pirata" class="button-icon">
+  </button>
+</div>
+  <!-- Main -->
+  <main class="relative z-20 px-4 py-12 max-w-7xl mx-auto">
+    <header class="text-center mb-12">
+  <h1 class="text-4xl md:text-5xl font-extrabold text-yellow-300 drop-shadow-lg relative inline-block">
+Storia di One Peace
+
+</h1>
+     
+ 
+    </header>
+      <!-- storia -->
+ <div class="scroll-style overflow-y-auto bg-black/80 backdrop-blur-sm border-4 border-yellow-400 rounded-2xl shadow-2xl p-8 h-[85vh] w-[85vw] max-w-[1400px] max-h-[950px]">
+
+  <h2 class="one-piece-text text-2xl md:text-3xl font-bold uppercase mb-6">Introduzione</h2>
+  <p class="one-piece-text text-lg md:text-xl leading-relaxed">
+    One Piece è un manga creato da Eiichirō Oda nel 1997 e racconta la grande avventura di Monkey D. Luffy, un ragazzo che sogna di diventare Re dei Pirati trovando il leggendario tesoro chiamato One Piece, lasciato nascosto da Gol D. Roger, il più grande pirata della storia.
+  </p>
+
+  <h2 class="one-piece-text text-2xl md:text-3xl font-bold uppercase mb-6">Il viaggio di Luffy</h2>
+  <p class="one-piece-text text-lg md:text-xl leading-relaxed">
+    Luffy, dopo aver mangiato da bambino un Frutto del Diavolo che gli ha donato un corpo di gomma ma gli ha tolto la capacità di nuotare, parte per un viaggio attraverso i mari e lungo il suo cammino forma una ciurma variegata e leale, nota come i Pirati di Cappello di Paglia.
+  </p>
+
+  <h2 class="one-piece-text text-2xl md:text-3xl font-bold uppercase mb-6">La ciurma</h2>
+  <p class="one-piece-text text-lg md:text-xl leading-relaxed">
+    Tra i suoi compagni più importanti ci sono:
+  </p>
+  <ul class="one-piece-text text-lg md:text-xl list-disc ml-6 leading-relaxed">
+    <li>Zoro: un abilissimo spadaccino.</li>
+    <li>Nami: una navigatrice capace di leggere i mari.</li>
+    <li>Usopp: un tiratore scelto e inventore.</li>
+    <li>Sanji: un cuoco con straordinarie abilità di combattimento.</li>
+    <li>Chopper: una renna diventata medico grazie a un Frutto del Diavolo.</li>
+    <li>Nico Robin: un’archeologa che studia la storia perduta.</li>
+    <li>Franky: un carpentiere cyborg.</li>
+    <li>Brook: un musicista risorto con poteri soprannaturali.</li>
+    <li>Jinbe: un uomo-pesce maestro della navigazione.</li>
+  </ul>
+
+  <h2 class="one-piece-text text-2xl md:text-3xl font-bold uppercase mb-6">Avventure e nemici</h2>
+  <p class="one-piece-text text-lg md:text-xl leading-relaxed">
+    La ciurma affronta mari e isole sempre più pericolose, incontrando potenti pirati rivali, la Marina, il Governo Mondiale e i Quattro Imperatori, figure leggendarie che dominano il Nuovo Mondo. Ogni battaglia contribuisce alla crescita personale di Luffy e dei suoi compagni.
+  </p>
+
+  <h2 class="one-piece-text text-2xl md:text-3xl font-bold uppercase mb-6">Misteri e storia</h2>
+  <p class="one-piece-text text-lg md:text-xl leading-relaxed">
+    Oltre alla ricerca del tesoro, la trama esplora temi come la libertà, l’amicizia, la lotta contro le ingiustizie e la scoperta della Storia Dimenticata, custodita nei Poneglyphs, misteriosi blocchi di pietra che rivelano segreti proibiti sul vero passato del mondo.
+  </p>
+
+  <h2 class="one-piece-text text-2xl md:text-3xl font-bold uppercase mb-6">Fase finale</h2>
+  <p class="one-piece-text text-lg md:text-xl leading-relaxed">
+    Con il tempo Luffy cresce, supera nemici temibili e conquista un ruolo di rilievo fino a diventare egli stesso un Imperatore dei Mari. La storia è ancora in corso e i grandi misteri legati al One Piece, alle Armi Antiche, al Secolo Vuoto e al significato della D. continuano ad alimentare il fascino di un’opera che unisce avventura, comicità, emozione e riflessione sulla libertà e i sogni.
+  </p>
+
+</div>
+
+  </main>
+  <script src="./script2.js"></script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Piece - Ciurma Mugiwara</title>
+  <link href="./style.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen">
+
+  <!-- Audio effetti -->
+  <audio id="suono-giro" preload="auto">
+    <source src="./paper.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Sfondo -->
+  <div class="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('./onepeace.jpg');"></div>
+  <div class="fixed inset-0 z-10 bg-black/60"></div>
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-black/80 border-b-4 border-yellow-400 shadow-lg">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <!-- Mobile menu button -->
+        <div class="flex sm:hidden">
+          <button id="mobile-menu-btn"
+            class="inline-flex items-center justify-center rounded-md p-2 text-yellow-300 hover:text-white hover:bg-black/30 transition">
+            🧢
+          </button>
+        </div>
+
+        <!-- Logo -->
+        <div class="flex-1 flex items-center justify-center sm:justify-start">
+          <span class="text-2xl font-extrabold text-yellow-300 drop-shadow-lg font-one">MUGIWARA</span>
+
+          <!-- Desktop menu -->
+          <div class="hidden sm:flex sm:ml-6 space-x-4">
+            <a href="./progettoDOM.html" class="px-3 py-2 text-sm font-semibold text-white hover:bg-red-600 hover:text-yellow-200 rounded-md">Home</a>
+            <a href="./page2.html" class="px-3 py-2 text-sm font-semibold text-white hover:bg-red-600 hover:text-yellow-200 rounded-md">Crew</a>
+            <a href="./page3.html" class="px-3 py-2 text-sm font-semibold text-white hover:bg-red-600 hover:text-yellow-200 rounded-md">Story</a>
+            <a href="./page4.html" class="px-3 py-2 text-sm font-semibold text-white hover:bg-red-600 hover:text-yellow-200 rounded-md">Grand Line</a>
+          </div>
+        </div>
+
+        <!-- Profilo -->
+<div class="relative ml-3">
+  <button id="profile-btn" class="relative flex rounded-full ring-2 ring-yellow-400 focus:outline-none">
+    <img src="./lu.png" alt="Luffy" class="w-12 h-12 rounded-full border-2 border-yellow-400">
+  </button>
+
+  <!-- Menu a tendina -->
+  <div id="user-menu" class="hidden absolute right-0 mt-2 w-48 bg-yellow-400 rounded-md shadow-lg py-1 ring-1 ring-black/10">
+    <a href="#" class="block px-4 py-2 text-gray-800 font-semibold hover:bg-red-500 hover:text-white">Profilo</a>
+  
+    <a href="#" class="block px-4 py-2 text-gray-800 font-semibold hover:bg-red-500 hover:text-white">Logout</a>
+  </div>
+</div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden sm:hidden mt-2 space-y-1 bg-black/60 rounded-b-lg px-2 py-2">
+        <a href="./progettoDOM.html" class="block px-3 py-2 text-white font-semibold bg-red-600 rounded-md">Home</a>
+        <a href="./page2.html" class="block px-3 py-2 text-white font-semibold hover:bg-red-600 rounded-md">Crew</a>
+        <a href="./page3.html" class="block px-3 py-2 text-white font-semibold hover:bg-red-600 rounded-md">Story</a>
+        <a href="./page4.html" class="block px-3 py-2 text-white font-semibold hover:bg-red-600 rounded-md">Grand Line</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Audio sfondo -->
+  <audio id="bg-music" loop>
+    <source src="./videoplayback.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Pulsante musica -->
+  <div class="relative z-20 flex justify-left mt-2">
+    <button id="music-btn" class="onepiece-button fixed">
+      <img id="buttonIcon" src="./mugiwara.png" alt="Icona Pirata" class="button-icon">
+    </button>
+  </div>
+
+  <!-- Main -->
+  <main class="relative z-20 px-4 py-12 max-w-7xl mx-auto">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-yellow-300 drop-shadow-lg relative inline-block">
+   La ciurma di Luffy cappello di paglia
+      </h1>
+     
+    </header>
+
+    <!-- Gruppo 1: Card 1-4 -->
+    <div class="flex flex-wrap justify-center gap-8 px-4 py-8">
+      <!-- Nami -->
+      <div class="card-container" data-character="nami">
+        <div class="flip-card-container">
+          <div class="flip-card">
+            <div class="flip-card-front"><img src="./namifront.jpg" alt="Nami" /></div>
+            <div class="flip-card-back" style="background-image: url('./namiback.jpg');">
+              <div class="card-back-content">
+                <div class="card-back-title">Nami</div>
+                <div class="card-back-subtitle">Poteri e Abilità:</div>
+                <ul><li>Clima-Tact</li><li>Tempo atmosferico</li></ul>
+                <div class="card-back-quote">"Navigo verso i miei sogni!"</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 text-center bg-black/50 rounded-b-lg mt-2 text-white">Navigator<p>Nami</p></div>
+        <div class="flex justify-center p-4">
+          <button class="flip-btn px-6 py-2 rounded-full font-one font-extrabold uppercase tracking-wider
+            bg-gradient-to-b from-yellow-300 to-yellow-500 text-black border-4 border-black
+            shadow-[4px_4px_0px_#dc2626,6px_6px_0px_#000] hover:scale-105 active:scale-95">Follow</button>
+        </div>
+      </div>
+
+      <!-- Usopp -->
+      <div class="card-container" data-character="usop">
+        <div class="flip-card-container">
+          <div class="flip-card">
+            <div class="flip-card-front"><img src="./usopfront.jpg" alt="Usopp" /></div>
+            <div class="flip-card-back" style="background-image: url('./usopback.jpg');">
+              <div class="card-back-content">
+                <div class="card-back-title">Usopp</div>
+                <div class="card-back-subtitle">Poteri e Abilità:</div>
+                <ul><li>Lancio di proiettili</li><li>Invenzioni</li></ul>
+                <div class="card-back-quote">"Non arrendersi mai!"</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 text-center bg-black/50 rounded-b-lg mt-2 text-white">Sniper<p>Usopp</p></div>
+        <div class="flex justify-center p-4">
+          <button class="flip-btn px-6 py-2 rounded-full font-one font-extrabold uppercase tracking-wider
+            bg-gradient-to-b from-yellow-300 to-yellow-500 text-black border-4 border-black
+            shadow-[4px_4px_0px_#dc2626,6px_6px_0px_#000] hover:scale-105 active:scale-95">Follow</button>
+        </div>
+      </div>
+
+      <!-- Sanji -->
+      <div class="card-container" data-character="sanji">
+        <div class="flip-card-container">
+          <div class="flip-card">
+            <div class="flip-card-front"><img src="./sanjifront.jpg" alt="Sanji" /></div>
+            <div class="flip-card-back" style="background-image: url('./sanjiback.jpg');">
+              <div class="card-back-content">
+                <div class="card-back-title">Sanji</div>
+                <div class="card-back-subtitle">Poteri e Abilità:</div>
+                <ul><li>Black Leg Style</li><li>Diable Jambe</li></ul>
+                <div class="card-back-quote">"Cucino e combatto!"</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 text-center bg-black/50 rounded-b-lg mt-2 text-white">Chef & Fighter<p>Sanji</p></div>
+        <div class="flex justify-center p-4">
+          <button class="flip-btn px-6 py-2 rounded-full font-one font-extrabold uppercase tracking-wider
+            bg-gradient-to-b from-yellow-300 to-yellow-500 text-black border-4 border-black
+            shadow-[4px_4px_0px_#dc2626,6px_6px_0px_#000] hover:scale-105 active:scale-95">Follow</button>
+        </div>
+      </div>
+
+      <!-- Chopper -->
+      <div class="card-container" data-character="chopper">
+        <div class="flip-card-container">
+          <div class="flip-card">
+            <div class="flip-card-front"><img src="./chopperfront.jpg" alt="Chopper" /></div>
+            <div class="flip-card-back" style="background-image: url('./chopperback.jpg');">
+              <div class="card-back-content">
+                <div class="card-back-title">Tony Tony Chopper</div>
+                <div class="card-back-subtitle">Poteri e Abilità:</div>
+                <ul><li>Rumble Ball</li><li>Trasformazioni</li></ul>
+                <div class="card-back-quote">"Medico della ciurma!"</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 text-center bg-black/50 rounded-b-lg mt-2 text-white">Doctor<p>Chopper</p></div>
+        <div class="flex justify-center p-4">
+          <button class="flip-btn px-6 py-2 rounded-full font-one font-extrabold uppercase tracking-wider
+            bg-gradient-to-b from-yellow-300 to-yellow-500 text-black border-4 border-black
+            shadow-[4px_4px_0px_#dc2626,6px_6px_0px_#000] hover:scale-105 active:scale-95">Follow</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gruppo 2: Card 5-8 -->
+    <div class="flex flex-wrap justify-center gap-8 px-4 py-8">
+      <!-- Nico Robin -->
+      <div class="card-container" data-character="nico-robin">
+        <div class="flip-card-container">
+          <div class="flip-card">
+            <div class="flip-card-front"><img src="./nicofront.jpg" alt="Nico Robin" /></div>
+            <div class="flip-card-back" style="background-image: url('./nicoback.jpg');">
+              <div class="card-back-content">
+                <div class="card-back-title">Nico Robin</div>
+                <div class="card-back-subtitle">Poteri e Abilità:</div>
+                <ul><li>Hana Hana no Mi</li><li>Manipolazione degli arti</li></ul>
+                <div class="card-back-quote">"Scoprirò la verità del mondo!"</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 text-center bg-black/50 rounded-b-lg mt-2 text-white">Archeologa<p>Nico Robin</p></div>
+        <div class="flex justify-center p-4">
+          <button class="flip-btn px-6 py-2 rounded-full font-one font-extrabold uppercase tracking-wider
+            bg-gradient-to-b from-yellow-300 to-yellow-500 text-black border-4 border-black
+            shadow-[4px_4px_0px_#dc2626,6px_6px_0px_#000] hover:scale-105 active:scale-95">Follow</button>
+        </div>
+      </div>
+
+      <!-- Franky -->
+      <div class="card-container" data-character="franky">
+        <div class="flip-card-container">
+          <div class="flip-card">
+            <div class="flip-card-front"><img src="./frankyfront.jpg" alt="Franky" /></div>
+            <div class="flip-card-back" style="background-image: url('./frankyback.jpg');">
+              <div class="card-back-content">
+                <div class="card-back-title">Franky</div>
+                <div class="card-back-subtitle">Poteri e Abilità:</div>
+                <ul><li>Cyborg Strength</li><li>Weapons Engineering</li><li>Franky Shogun</li><li>Strong Right</li></ul>
+                <div class="card-back-quote">"Super!"</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 text-center bg-black/50 rounded-b-lg mt-2 text-white">Meccanico della ciurma<p>Franky</p></div>
+        <div class="flex justify-center p-4">
+          <button class="flip-btn px-6 py-2 rounded-full font-one font-extrabold uppercase tracking-wider
+            bg-gradient-to-b from-yellow-300 to-yellow-500 text-black border-4 border-black
+            shadow-[4px_4px_0px_#dc2626,6px_6px_0px_#000] hover:scale-105 active:scale-95">Follow</button>
+        </div>
+      </div>
+
+      <!-- Brook -->
+      <div class="card-container" data-character="brook">
+        <div class="flip-card-container">
+          <div class="flip-card">
+            <div class="flip-card-front"><img src="./brookfront.jpg" alt="Brook" /></div>
+            <div class="flip-card-back" style="background-image: url('./brookretro.jpg');">
+              <div class="card-back-content">
+                <div class="card-back-title">Brook</div>
+                <div class="card-back-subtitle">Poteri e Abilità:</div>
+                <ul><li>Yomi Yomi no Mi</li><li>Spada e Musica</li><li>Speed & Agility</li></ul>
+                <div class="card-back-quote">"Yohohoho!"</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 text-center bg-black/50 rounded-b-lg mt-2 text-white">Musicista della ciurma<p>Brook</p></div>
+        <div class="flex justify-center p-4">
+          <button class="flip-btn px-6 py-2 rounded-full font-one font-extrabold uppercase tracking-wider
+            bg-gradient-to-b from-yellow-300 to-yellow-500 text-black border-4 border-black
+            shadow-[4px_4px_0px_#dc2626,6px_6px_0px_#000] hover:scale-105 active:scale-95">Follow</button>
+        </div>
+      </div>
+
+      <!-- Jinbe -->
+      <div class="card-container" data-character="jinbe">
+        <div class="flip-card-container">
+          <div class="flip-card">
+            <div class="flip-card-front"><img src="./jinbefront.jpg" alt="Jinbe" /></div>
+            <div class="flip-card-back" style="background-image: url('./jinbeback.jpg');">
+              <div class="card-back-content">
+                <div class="card-back-title">Jinbe</div>
+                <div class="card-back-subtitle">Poteri e Abilità:</div>
+                <ul><li>Karate del Mare</li><li>Controllo dell'acqua</li><li>Forza sovrumana</li><li>Leadership</li></ul>
+                <div class="card-back-quote">"Onore e giustizia!"</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 text-center bg-black/50 rounded-b-lg mt-2 text-white">Timoniere della ciurma<p>Jinbe</p></div>
+        <div class="flex justify-center p-4">
+          <button class="flip-btn px-6 py-2 rounded-full font-one font-extrabold uppercase tracking-wider
+            bg-gradient-to-b from-yellow-300 to-yellow-500 text-black border-4 border-black
+            shadow-[4px_4px_0px_#dc2626,6px_6px_0px_#000] hover:scale-105 active:scale-95">Follow</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

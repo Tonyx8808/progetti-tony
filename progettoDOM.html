@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One Piece - Ciurma Mugiwara</title>
+  <link href="./style.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen">
+
+  <audio id="suono-giro" preload="auto">
+  <source src="./paper.mp3" type="audio/mpeg">
+</audio>
+
+  <!-- Sfondo -->
+  <div class="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('./onepeace.jpg');"></div>
+  <div class="fixed inset-0 z-10 bg-black/60"></div>
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-black/80 border-b-4 border-yellow-400 shadow-lg">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <!-- Mobile menu button -->
+      <div class="flex sm:hidden">
+        <button id="mobile-menu-btn"
+          class="inline-flex items-center justify-center rounded-md p-2 text-yellow-300 hover:text-white hover:bg-black/30 transition">
+          🧢
+        </button>
+      </div>
+
+      <!-- Logo -->
+      <div class="flex-1 flex items-center justify-center sm:justify-start">
+        
+        <span class="text-2xl font-extrabold text-yellow-300 drop-shadow-lg font-one">MUGIWARA</span>
+        <!-- Desktop menu -->
+        <div class="hidden sm:flex sm:ml-6 space-x-4">
+          <a href="./progettoDOM.html" class="px-3 py-2 text-sm font-semibold text-white hover:bg-red-600 hover:text-yellow-200 rounded-md">Home</a>
+          <a href="./page2.html" class="px-3 py-2 text-sm font-semibold text-white hover:bg-red-600 hover:text-yellow-200 rounded-md">Crew</a>
+          <a href="./page3.html" class="px-3 py-2 text-sm font-semibold text-white hover:bg-red-600 hover:text-yellow-200 rounded-md">Story</a>
+          <a href="./page4.html" class="px-3 py-2 text-sm font-semibold text-white hover:bg-red-600 hover:text-yellow-200 rounded-md">Grand Line</a>
+        </div>
+      </div>
+
+     <!-- Profilo -->
+<div class="relative ml-3">
+  <button id="profile-btn" class="relative flex rounded-full ring-2 ring-yellow-400 focus:outline-none">
+    <img src="./lu.png" alt="Luffy" class="w-12 h-12 rounded-full border-2 border-yellow-400">
+  </button>
+
+  <!-- Menu a tendina -->
+  <div id="user-menu" class="hidden absolute right-0 mt-2 w-48 bg-yellow-400 rounded-md shadow-lg py-1 ring-1 ring-black/10">
+    <a href="#" class="block px-4 py-2 text-gray-800 font-semibold hover:bg-red-500 hover:text-white">Profilo</a>
+ 
+    <a href="#" class="block px-4 py-2 text-gray-800 font-semibold hover:bg-red-500 hover:text-white">Logout</a>
+  </div>
+</div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden sm:hidden mt-2 space-y-1 bg-black/60 rounded-b-lg px-2 py-2">
+      <a href="./progettoDOM.html" class="block px-3 py-2 text-white font-semibold bg-red-600 rounded-md">Home</a>
+      <a href="./page2.html" class="block px-3 py-2 text-white font-semibold hover:bg-red-600 rounded-md">Crew</a>
+      <a href="./page3.html" class="block px-3 py-2 text-white font-semibold hover:bg-red-600 rounded-md">Story</a>
+      <a href="./page4.html" class="block px-3 py-2 text-white font-semibold hover:bg-red-600 rounded-md">Grand Line</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Audio nascosto -->
+<audio id="bg-music" loop>
+  <source src="./videoplayback.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Pulsante circolare sotto la navbar -->
+<div class="relative z-20 flex justify-left mt-2">
+  <button id="music-btn" class="onepiece-button fixed">
+    <img id="buttonIcon" src="./mugiwara.png" alt="Icona Pirata" class="button-icon">
+  </button>
+</div>
+  <!-- Main -->
+  <main class="relative z-20 px-4 py-12 max-w-7xl mx-auto">
+    <header class="text-center mb-12">
+  <h1 class="text-4xl md:text-5xl font-extrabold text-yellow-300 drop-shadow-lg relative inline-block">
+  Benvenuto nella Ciurma
+  <img 
+    src="./cappello.png" 
+    alt="Cappello di Paglia" 
+      class="cappello-paglia absolute -top-8 left-0 transform -translate-x-0 translate y-0 z-10 w-12"
+  >
+</h1>
+      <p class="mt-4 text-lg font-bold animate-bounce text-white/90">La tua avventura inizia qui.</p>
+    </header>
+
+    <!-- Cards -->
+    <div class="flex flex-col sm:flex-row sm:justify-center gap-8 px-4 py-8">
+      <div class="card-container" data-character="luffy">
+        <div class="flip-card-container">
+          <div class="flip-card">
+            <div class="flip-card-front">
+              <img src="./luffy.jpg" alt="Monkey D. Luffy" />
+            </div>
+            <div class="flip-card-back" style="background-image: url('./luffyback.jpg');">
+              <div class="card-back-content">
+                <div class="card-back-title">Monkey D. Luffy</div>
+                <div class="card-back-subtitle">Poteri e Abilità:</div>
+                <ul>
+                  <li>Gom Gom Pistol</li>
+                  <li>Gom Gom Bazooka</li>
+                  <li>Gear Second</li>
+                  <li>Gear Third</li>
+                </ul>
+                <div class="card-back-quote">"Gomu Gomu no…!"</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 text-center bg-black/50 rounded-b-lg mt-2 text-white">
+          CAPITANO DI MUGIWARA
+          <p>Monkey D. Luffy</p>
+        </div>
+        <div class="flex justify-center p-4">
+          <button class="flip-btn px-6 py-2 rounded-full font-one font-extrabold uppercase tracking-wider bg-gradient-to-b from-yellow-300 to-yellow-500 text-black border-4 border-black shadow-[4px_4px_0px_#dc2626,6px_6px_0px_#000] hover:scale-105 active:scale-95">Follow</button>
+        </div>
+      </div>
+
+      <div class="card-container" data-character="zoro">
+        <div class="flip-card-container">
+          <div class="flip-card">
+            <div class="flip-card-front">
+              <img src="./zoro.jpg" alt="Roronoa Zoro" />
+            </div>
+            <div class="flip-card-back" style="background-image: url('./zoroback.jpg');">
+              <div class="card-back-content">
+                <div class="card-back-title">Roronoa Zoro</div>
+                <div class="card-back-subtitle">Poteri e Abilità:</div>
+                <ul>
+                  <li>Three-Sword Style</li>
+                  <li>Asura</li>
+                  <li>Oni Giri</li>
+                  <li>Flying Slash</li>
+                </ul>
+                <div class="card-back-quote">"Santoryu…!"</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 text-center bg-black/50 rounded-b-lg mt-2 text-white">
+          Ronoroa Zoro<br>
+          Braccio destro di Luffy
+        </div>
+        <div class="flex justify-center p-4">
+          <button class="flip-btn px-6 py-2 rounded-full font-one font-extrabold uppercase tracking-wider bg-gradient-to-b from-yellow-300 to-yellow-500 text-black border-4 border-black shadow-[4px_4px_0px_#dc2626,6px_6px_0px_#000] hover:scale-105 active:scale-95">Follow</button>
+        </div>
+      </div>
+    </div>
+  </main>
+<div class="flex flex-col md:flex-row gap-8 mt-10 px-6">
+
+  <!-- Colonna Frutti (sx) -->
+  <div class="flex-1 bg-black/50 backdrop-blur-sm border-4 border-yellow-400 rounded-2xl shadow-2xl p-6">
+    <h2 class="text-3xl font-extrabold text-yellow-300 font-one mb-4 text-center animate-bounce">
+      <div class="flex gap-4">
+    <img src="./gomu.png" alt="Gomu Gomu no Mi" class="w-12 h-12">
+</div> Frutti del Diavolo
+    </h2>
+    <!-- Contenitore Frutti -->
+<div id="fruits-container" class="overflow-hidden h-96 relative border-4 border-yellow-400 rounded-2xl shadow-2xl p-4 bg-black/50">
+  <ul id="fruits-list" class="grid grid-cols-2 md:grid-cols-3 gap-4 absolute top-0"></ul>
+</div>
+  </div>
+
+  <!-- Colonna Crew (dx) -->
+  <div class="flex-1 bg-black/50 backdrop-blur-sm border-4 border-yellow-400 rounded-2xl shadow-2xl p-6">
+    <h2 class="text-3xl font-extrabold text-yellow-300 font-one mb-4 text-center animate-bounce">
+      <img src="./mugh.png" alt="mugiwara flag" class="w-12 h-12">
+       Crew
+    </h2>
+    <div id="crew-container" class="overflow-hidden h-96 relative border-4 border-yellow-400 rounded-2xl shadow-2xl p-4 bg-black/50">
+  <ul id="crew-list" class="grid grid-cols-2 md:grid-cols-3 gap-4 absolute top-0"></ul>
+</div>
+    </div>
+  </div>
+
+</div>
+
+
+</div>
+
+
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
