@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Biglietto Taekwondo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=East+Sea+Dokdo&family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: radial-gradient(circle at center, 
+        #ffffff 0%, 
+        #fefefe 40%, 
+        #e60026 70%, 
+        #0047a0 100%);
+      background-attachment: fixed;
+      position: relative;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    /* Sovrapposizione Taeguk */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, #e60026 0%, #0047a0 50%);
+      opacity: 0.2;
+      z-index: 0;
+    }
+
+    /* Trigrammi */
+    .trigram {
+      position: absolute;
+      font-size: 3rem;
+      font-weight: bold;
+      color: rgba(0,0,0,0.75);
+      z-index: 1;
+    }
+    .trigram.top-left { top: 20px; left: 20px; }
+    .trigram.top-right { top: 20px; right: 20px; }
+    .trigram.bottom-left { bottom: 20px; left: 20px; }
+    .trigram.bottom-right { bottom: 20px; right: 20px; }
+
+    /* Card */
+    .korean-card {
+      position: relative;
+      border: 6px solid transparent;
+      border-image: linear-gradient(to right, #e60026, #0047a0) 1;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      z-index: 2;
+    }
+    .korean-card::before {
+      content: "";
+      position: absolute;
+      inset: -12px;
+      border: 3px solid rgba(0,0,0,0.1);
+      border-radius: 1rem;
+      z-index: -1;
+    }
+
+    /* Immagini ai lati della card */
+    .side-img {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 120px;
+      z-index: 3;
+    }
+    .side-img.left {
+      left: -140px; /* distanza dal bordo della card */
+    }
+    .side-img.right {
+      right: -140px;
+    }
+
+     .korean-text {
+      font-family: 'Do Hyeon', 'Noto Sans KR', sans-serif;
+      font-size: 2.5rem;
+      background: linear-gradient(to bottom, #e60026, #0047a0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 2px;
+    }
+    .vertical-text {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      font-family: 'East Sea Dokdo', cursive;
+      font-size: 3rem;
+      color: #111;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+  <!-- Trigrammi -->
+  <div class="trigram top-left">☰</div>
+  <div class="trigram top-right">☱</div>
+  <div class="trigram bottom-left">☲</div>
+  <div class="trigram bottom-right">☳</div>
+
+  <!-- Card con immagini ai lati -->
+  <div class="relative">
+    <img src="./ta1.png" alt="A sinistra" class="side-img left">
+    <img src="./ta.png" alt="A destra" class="side-img right">
+
+    <div class="bg-white p-6 rounded-2xl korean-card max-w-md text-center relative">
+      <video id="tkdVideo" class="w-full mb-4 rounded-lg" autoplay loop>
+        <source src="./video.mp4" type="video/mp4">
+        Il tuo browser non supporta il video.
+      </video>
+    
+      <h1 class="text-2xl font-bold text-gray-900 mb-2 tracking-wide">Taekwondo: dove la passione incontra la perfezione</h1>
+      <p class="text-gray-700 mb-4 leading-relaxed">
+      Un anno di sudore, di lacrime e di vittorie. Un anno di crescita, 
+      di apprendimento e di sfide superate. Auguri di buon compleanno 
+      al nostro Dojang! Continuiamo a camminare insieme sulla strada del Taekwondo, 
+      con disciplina, rispetto e passione. Che il nuovo anno porti nuove 
+      opportunità per crescere, migliorare e raggiungere i nostri obiettivi. 
+      Taekwondo per sempre! 🥋💪
+    </p>
+    <button id="playPauseBtn" 
+  class="bg-gradient-to-r from-red-600 to-blue-600 text-white px-6 py-2 rounded-full shadow hover:opacity-90 transition">
+  Riproduci
+</button>
+
+  </div>
+
+<script>
+  const video = document.getElementById('tkdVideo');
+  const btn = document.getElementById('playPauseBtn');
+
+  btn.addEventListener('click', () => {
+    if (video.paused) {
+      video.play();
+      btn.textContent = "Pausa";
+    } else {
+      video.pause();
+      btn.textContent = "Riproduci";
+    }
+  });
+
+  
+</script>
+
+</body>
+</html>
