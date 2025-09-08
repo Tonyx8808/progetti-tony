@@ -111,7 +111,10 @@ const grandBlueFallback = [
   {name:"Fishman Island", description:"Isola sottomarina abitata dagli uomini-pesce."},
   {name:"Punk Hazard", description:"Isola divisa tra fuoco e ghiaccio, laboratorio segreto."},
   {name:"Dressrosa", description:"Isola governata da Donquixote Doflamingo, famosa per il torneo di gladiatori."},
-  {name:"Zou", description:"Grande elefante vivente su cui si trova un’intera isola."}
+  {name:"Zou", description:"Grande elefante vivente su cui si trova un’intera isola."},
+   {name:"Whole Cake Island", description:"Isola controllata da Big Mom, regno di dolci e pericoli."},
+  {name:"Wano", description:"Paese isolato e tradizionalista, dominato da Kaido e gli Orochi."},
+  {name:"Egghead", description:"Isola futuristica del Dr. Vegapunk, ricca di tecnologia avanzata."}
 ];
 
 // ==========================================
