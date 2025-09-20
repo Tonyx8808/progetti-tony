@@ -46,7 +46,10 @@ In pratica questo codice permette al pulsante di avviare, mettere in pausa e far
 volta che serve, e di aggiornare il pulsante visivamente in base allo stato della riproduzione.*/
 /*==================================================================================================*/
   // Mobile menu
-  const mobileBtn = document.getElementById("mobile-menu-btn");
+  const mobileBtn = document.getElementById("mobile-menu-btn"); //Serve a prendere un elemento della pagina usando il suo id.
+
+//L’id è unico, quindi restituisce un solo elemento.Una volta preso, puoi modificarne il contenuto, 
+// lo stile o aggiungere eventi.
   const mobileMenu = document.getElementById("mobile-menu");
 
   if (mobileBtn && mobileMenu) {
@@ -62,7 +65,10 @@ const profileBtn = document.getElementById('profile-btn');
 const userMenu = document.getElementById('user-menu');
 
 // Mostra/Nasconde il menu al click
-profileBtn.addEventListener('click', (e) => {
+profileBtn.addEventListener('click', (e) => {//Serve a prendere un elemento HTML usando il suo id.
+// Restituisce un solo elemento perché l’id deve essere unico nella pagina.
+
+
   e.stopPropagation(); // Impedisce che il click chiuda subito il menu
   userMenu.classList.toggle('hidden');
 });
@@ -78,12 +84,16 @@ document.addEventListener('click', () => {
 
   /*==================================================================================================*/
   // Flip cards
-  document.querySelectorAll(".flip-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const container = btn.closest(".card-container");
-      const card = container.querySelector(".flip-card");
-      card.classList.toggle("flipped");
-      btn.textContent = btn.textContent === "Follow" ? "Unfollow" : "Follow";
+  document.querySelectorAll(".flip-btn").forEach(btn => { //prende tutti i pulsanti della classe flip-btn
+    //forEach per ogni pulsante esegue il codice dentro le parentesi
+    btn.addEventListener("click", () => { //evento click
+      const container = btn.closest(".card-container"); //cerca il contenitore più vicino con la classe
+      //  card-container partendo dal pulsante stesso.
+      const card = container.querySelector(".flip-card"); //prende la carta dentro quel contenitore.
+      card.classList.toggle("flipped"); //aggiunge o rimuove la classe flipped, che di solito fa girare la carta (flip).
+      btn.textContent = btn.textContent === "Follow" ? "Unfollow" : "Follow"; //cambia il testo del pulsante: 
+      // se c’era scritto “Follow” diventa “Unfollow”, 
+      // e viceversa.
   /*Questa parte serve a far funzionare le card interattive. Per ogni pulsante con la classe "flip-btn", quando viene cliccato, la card corrispondente si gira (aggiungendo o togliendo la classe "flipped") e il testo del pulsante cambia: se prima era "Follow" diventa "Unfollow" e viceversa. In pratica, 
   clicchi sul pulsante e la card si capovolge mostrando il retro,
    e il pulsante aggiorna subito il suo testo.*/
